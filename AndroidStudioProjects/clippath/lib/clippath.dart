@@ -63,12 +63,12 @@ class WavyHeaderImageState extends State<WavyHeaderImage>{
                left: 30.0,
                 top: 200.0,
                 width: 150.0,
-                height: 550.0,
+                height: 150.0,
                 
                 child: InkWell(onTap: (){print('hello');}, child: Card(
                       elevation: 20.0,
                       color: Colors.white,
-                      child:  Column(
+                      child:  Column(mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Image.asset("assets/nurse.png",height: 100.0,width: 100.0,),
                             Text('Nurses',textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0),),
@@ -81,12 +81,12 @@ class WavyHeaderImageState extends State<WavyHeaderImage>{
                left: 210.0,
                 top: 200.0,
                 width: 150.0,
-                
-                child:   Container(height: 530.0,width: 210.0,
+                height: 150.0,
+                child:   Container(
                   child: Card(
                         elevation: 20.0,
                         color: Colors.white,
-                        child:  Column( 
+                        child:  Column( mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Image.asset("assets/hospital.png",height: 100.0,width: 100.0,),
                               Text('Hospitals',textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0),),
@@ -107,7 +107,7 @@ class WavyHeaderImageState extends State<WavyHeaderImage>{
                         child:  Column(mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Image.asset("assets/medison.png",height: 100.0,width: 100.0,),
-                              Text('Medicine Store',textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0),),
+                              Text('Medical Store',textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0),),
                            
                             ],
                           ),

@@ -50,9 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {}),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       bottomNavigationBar: BottomNavigationBar(
         items: [
+           
           BottomNavigationBarItem(
             icon: Image.asset(
               'assets/star.png',
