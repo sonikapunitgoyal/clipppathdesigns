@@ -45,7 +45,12 @@ flutter:
     - assets/nurse.png
     - assets/doctor.png
     - assets/hospital.png
-    - assets/medical.png
+    - assets/medison.png
+    - assets/reports.png
+    - assets/patients.png
+    - assets/star.png
+    - assets/menu.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

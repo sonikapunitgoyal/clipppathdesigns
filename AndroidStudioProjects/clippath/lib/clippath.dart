@@ -8,14 +8,15 @@ class WavyHeaderImage extends StatefulWidget {
   }
 }
 class WavyHeaderImageState extends State<WavyHeaderImage>{
-   List<String> images = [
-    'nurse.png',
-    'hospital.png',
+   List<String> images = [  'nurse.png','hospital.png',
+   
+   
    
   ];
-  List<String> image = [
-    'medical.png',
-    'doctor.png',
+  
+  List<String> image = ['medison.png','doctor.png',
+    
+    
    
   ];
   List<String> texts=['nurses','hospitals'];
@@ -37,10 +38,7 @@ class WavyHeaderImageState extends State<WavyHeaderImage>{
             Positioned(
               left: 20.0,
               top: 70.0,
-              child: Icon(
-                Icons.menu,
-                color: Colors.white,
-              ),
+              child: Image.asset('assets/menu.png',height: 30.0,width: 30.0,),
               height: 60.0,
             ),
             Positioned(
@@ -64,61 +62,74 @@ class WavyHeaderImageState extends State<WavyHeaderImage>{
             Positioned(
                left: 30.0,
                 top: 200.0,
-                width: 350.0,
+                width: 150.0,
                 height: 550.0,
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  shrinkWrap: true,   mainAxisSpacing: 30.0,
-                  crossAxisSpacing: 30.0,
-physics: ClampingScrollPhysics(),  
-
-                  padding: EdgeInsets.only(left: 5.0,right: 5.0),
-                  children: images.map((imageName) {
-                   
-                    return //<--- on GridView item click, show PageView
-                        Card(
+                
+                child: InkWell(onTap: (){print('hello');}, child: Card(
                       elevation: 20.0,
                       color: Colors.white,
-                      child:  Column(mainAxisSize: MainAxisSize.max,mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      child:  Column(
                           children: <Widget>[
-                            Image.asset("assets/$imageName",height: 100.0,width: 100.0,),
-                            Text('Doctor',textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0),),
+                            Image.asset("assets/nurse.png",height: 100.0,width: 100.0,),
+                            Text('Nurses',textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0),),
                          
                           ],
                         ),
                       
-                    );
-                  }).toList(),
-                  
-                  
+                    ))),
+                    Positioned(
+               left: 210.0,
+                top: 200.0,
+                width: 150.0,
+                
+                child:   Container(height: 530.0,width: 210.0,
+                  child: Card(
+                        elevation: 20.0,
+                        color: Colors.white,
+                        child:  Column( 
+                            children: <Widget>[
+                              Image.asset("assets/hospital.png",height: 100.0,width: 100.0,),
+                              Text('Hospitals',textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0),),
+                           
+                            ],
+                          ),
+                        
+                      ),
                 )),
           ],
         ),
         SizedBox(height: 20.0,),
-       GridView.count(
-                  crossAxisCount: 2,
-                  shrinkWrap: true,   mainAxisSpacing: 30.0,
-                  crossAxisSpacing: 30.0,
-physics: ClampingScrollPhysics(),  
-
-                  padding: EdgeInsets.all(30.0),
-                  children: image.map((imageName) {
-                    return //<--- on GridView item click, show PageView
-                        Card(
-                      elevation: 10.0,
-                      color: Colors.white,
-                      child:  Column(mainAxisSize: MainAxisSize.max,mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      
-                          children: <Widget>[
-                            Image.asset("assets/$imageName",height: 100.0,width: 100,),
-                            
-                            Text("Doctor",textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0),)
-                          ],
-                        ),
-                      
-                    );
-                  }).toList(),
-                )
+       Row(children: <Widget>[
+          Container(height: 230.0,width: 210.0,padding: EdgeInsets.all(30.0),
+            child: Card(
+                        elevation: 20.0,
+                        color: Colors.white,
+                        child:  Column(mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Image.asset("assets/medison.png",height: 100.0,width: 100.0,),
+                              Text('Medicine Store',textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0),),
+                           
+                            ],
+                          ),
+                        
+                      ),
+          ),
+             
+                     Container(height: 170.0,width: 150.0,
+                       child: Card(
+                        elevation: 20.0,
+                        color: Colors.white,
+                        child:  Column(mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Image.asset("assets/doctor.png",height: 100.0,width: 100.0,),
+                              Text('Doctor', textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0),),
+                           
+                            ],
+                          ),
+                        
+                    ),
+                     )
+       ],)
       ],
     );
   }

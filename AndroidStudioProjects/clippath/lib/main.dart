@@ -26,40 +26,37 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-          child: Scaffold(
+    return  Scaffold(
         body: WavyHeaderImage(),
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-        floatingActionButton: FloatingActionButton(child: Icon(Icons.home,size: 30.0,),onPressed: (){ Navigator.push(
+        floatingActionButton: FloatingActionButton( child: Icon(Icons.home,size: 50.0,),onPressed: (){ Navigator.push(
     context,
     MaterialPageRoute(builder: (context) =>MyHomePage()),
   );},),
    bottomNavigationBar: BottomNavigationBar(
+     
           items: [
          
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.star_border
-          
-              ),
+              icon:  Image.asset('assets/star.png',height: 40.0,),
               title: new Text('Favorites'),
             ),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.description,
-                ),
+           
+            
+                
+             BottomNavigationBarItem(
+                icon: Image.asset('assets/reports.png',height: 40.0),
                 title: new Text('Reports')),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.portrait,
-                ),
+                BottomNavigationBarItem(
+                icon:  Image.asset('assets/patients.png',height: 40.0),
                 title: new Text('Patients')),
           ],
         ),
+        
             
        
           
-         ),textDirection: TextDirection.rtl,
+         
     );
   }
 }
