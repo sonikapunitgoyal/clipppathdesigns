@@ -50,6 +50,7 @@ flutter:
     - assets/patients.png
     - assets/star.png
     - assets/menu.png
+    - assets/home.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

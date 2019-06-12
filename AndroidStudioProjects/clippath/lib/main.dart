@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'clippath.dart';
 import 'list.dart';
 
@@ -26,37 +27,47 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        body: WavyHeaderImage(),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-        floatingActionButton: FloatingActionButton( child: Icon(Icons.home,size: 50.0,),onPressed: (){ Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) =>MyHomePage()),
-  );},),
-   bottomNavigationBar: BottomNavigationBar(
-     
-          items: [
-         
-            BottomNavigationBarItem(
-              icon:  Image.asset('assets/star.png',height: 40.0,),
-              title: new Text('Favorites'),
-            ),
-           
-            
-                
-             BottomNavigationBarItem(
-                icon: Image.asset('assets/reports.png',height: 40.0),
-                title: new Text('Reports')),
-                BottomNavigationBarItem(
-                icon:  Image.asset('assets/patients.png',height: 40.0),
-                title: new Text('Patients')),
-          ],
+    return Scaffold(
+      body: WavyHeaderImage(),
+      floatingActionButton: Container(
+        height: 80.0,
+        width: 80.0,
+        child: FittedBox(
+          child: FloatingActionButton(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Image.asset(
+                    'assets/home.png',
+                    height: 30.0,
+                  ),
+                  Text(
+                    "Home",
+                    style: TextStyle(fontSize: 8.0, color: Colors.white,fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+              onPressed: () {}),
         ),
-        
-            
-       
-          
-         
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              'assets/star.png',
+              height: 40.0,
+            ),
+            title: new Text('Favorites'),
+          ),
+          BottomNavigationBarItem(
+              icon: Image.asset('assets/reports.png', height: 40.0),
+              title: new Text('Reports')),
+          BottomNavigationBarItem(
+              icon: Image.asset('assets/patients.png', height: 40.0),
+              title: new Text('Patients')),
+        ],
+      ),
     );
   }
 }
